@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="container-form">
+
+    <form class="conteudo-form" [formGroup]="AddEmpresasForm" (submit)="submitAddEmpresa()">
+
+        <div>
+            <input class="input" placeholder="Cnpj" formControlName="cnpj" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('cnpj')?.hasError('required') && AddEmpresasForm.get('cnpj')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Nome Fantasia" formControlName="nome" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('nome')?.hasError('required') && AddEmpresasForm.get('nome')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="CEP" formControlName="cep" (input)="buscarCEPViaApi()" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('cep')?.hasError('required') && AddEmpresasForm.get('cep')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Rua" formControlName="rua" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('rua')?.hasError('required') && AddEmpresasForm.get('rua')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Cidade" formControlName="cidade" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('cidade')?.hasError('required') && AddEmpresasForm.get('cidade')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Bairro" formControlName="bairro" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('bairro')?.hasError('required') && AddEmpresasForm.get('bairro')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Estado" formControlName="estado" />
+            <div class="mensagem-erro"
+                *ngIf="AddEmpresasForm.get('estado')?.hasError('required') && AddEmpresasForm.get('estado')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div class="div-btn-add">
+            <button class="input-add" [disabled]="!AddEmpresasForm.valid"> Adicionar nova empresa </button>
+        </div>
+
+    </form>
+</div>

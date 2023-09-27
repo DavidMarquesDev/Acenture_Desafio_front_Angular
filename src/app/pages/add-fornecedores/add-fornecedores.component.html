@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+
+<div class="container-form">
+
+    <form class="conteudo-form" [formGroup]="AddFornecedorForm" (submit)="submitAddFornecedor()">
+
+        <div>
+            <input class="input" placeholder="CpfCnpj" formControlName="cpfcnpj" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('cpfcnpj')?.hasError('required') && AddFornecedorForm.get('cpfcnpj')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Nome Fantasia" formControlName="nome" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('nome')?.hasError('required') && AddFornecedorForm.get('nome')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Email" formControlName="email" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('email')?.hasError('required') && AddFornecedorForm.get('email')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+
+
+        <!-- <div>
+            <input class="input" placeholder="RG" formControlName="rg" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('rg')?.hasError('required') && AddFornecedorForm.get('rg')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Data de Nascimento" formControlName="dataNascimento" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('dataNascimento')?.hasError('required') && AddFornecedorForm.get('dataNascimento')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div> -->
+
+        <div>
+            <input class="input" placeholder="CEP" formControlName="cep" (input)="buscarCEPViaApi()" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('cep')?.hasError('required') && AddFornecedorForm.get('cep')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Rua" formControlName="rua" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('rua')?.hasError('required') && AddFornecedorForm.get('rua')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Cidade" formControlName="cidade" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('cidade')?.hasError('required') && AddFornecedorForm.get('cidade')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Bairro" formControlName="bairro" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('bairro')?.hasError('required') && AddFornecedorForm.get('bairro')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div>
+            <input class="input" placeholder="Estado" formControlName="estado" />
+            <div class="mensagem-erro"
+                *ngIf="AddFornecedorForm.get('estado')?.hasError('required') && AddFornecedorForm.get('estado')?.touched">
+                Campo Obrigatório!
+            </div>
+        </div>
+
+        <div class="div-btn-add">
+            <button class="input-add" [disabled]="!AddFornecedorForm.valid"> Adicionar novo Fornecedor </button>
+        </div>
+
+    </form>
+</div>

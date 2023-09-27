@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="conteudo-empresas">
+    <div class="lista-empresas">
+
+        <ng-container *ngFor="let item of empresas">
+            <div class="empresas">
+                <div class="cabecalho-empresas">
+
+                    <div class="texto-empresas">
+                        Cnpj: {{ formatarCnpj(item.cnpj) }}
+                    </div>
+
+                    <div class="texto-empresas">
+                        Nome fantasia: {{item.nome}}
+                    </div>
+
+                    <div class="texto-empresas">
+                        Cep: {{item.cep}}
+                    </div>
+
+                    <!-- Adicionando informações de endereço -->
+                    <div class="texto-empresas">
+                        Rua: {{ item.rua || 'N/A' }}
+                    </div>
+                    
+                    <div class="texto-empresas">
+                        Bairro: {{ item.bairro || 'N/A' }}
+                    </div>
+                    
+                    <div class="texto-empresas">
+                        Cidade: {{ item.cidade || 'N/A' }}
+                    </div>
+                    
+                    <div class="texto-empresas">
+                        Estado: {{ item.estado || 'N/A' }}
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- Lista de Fornecedores -->
+            <div class="lista-fornecedores">
+                <ng-container *ngFor="let fornecedor of item.fornecedores">
+                    <div class="fornecedor">
+                        <div class="texto-fornecedor">
+                            CNPJ: {{ formatarCnpj(fornecedor.cnpj) }}
+                        </div>
+
+                        <div class="texto-fornecedor">
+                            Nome fantasia: {{ fornecedor.nome }}
+                        </div>
+
+                        <div class="texto-fornecedor">
+                            Email: {{ fornecedor.email }}
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

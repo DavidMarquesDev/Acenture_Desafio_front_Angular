@@ -1,0 +1,21 @@
+.conteudo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.lista-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 5px 8px 0 gray;
+    text-align: center;
+    min-height: 350px;
+    transition: all 0.5s ease-in-out;
+    margin: 60px 16px;
+    overflow: auto;
+    padding: 20px; /* Adicionei um padding para espaçamento interno */
+}
